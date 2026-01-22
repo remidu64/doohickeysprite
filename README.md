@@ -7,6 +7,17 @@ a "simple" program that lets you make 64x64 pixel art and nothing else (not even
 1024 bytes of memory
 (both are easily expandable if you want to go through the source code and change it)
 
+## usage
+
+simply launch "untitledpixelartprogram.console.exe" or "untitledpixelartprogram.sh", depending on your operating system
+
+on linux, i highly recommend launching the program inside a terminal window so you have access to the debug logs (on windows, this should be done automatically if you launch "untitledpixelartprogram.console.exe")
+the command below assumes you ARE in the same folder as the executable files
+
+```
+$ ./untitledpixelartprogram.sh
+```
+
 ## syntax
 
 SET [VALUE] [TARGET]
@@ -20,7 +31,7 @@ PRINT [BYTE]
 
 ADD/SUB/DIV/MUL [BYTE1] [BYTE2] [TARGET]
  - adds/subtracts/divides/multiplies 2 bytes together and saves the result to another byte
- - 
+
 DRAW [BYTE1] [BYTE2] [COLOR]
  - draws a pixel on the coordinates specified by 2 bytes, with the color id from the game config (which can also be accessed using a byte and nothing else because i hate convenience)
 
