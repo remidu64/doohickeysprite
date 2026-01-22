@@ -19,6 +19,11 @@ func _ready() -> void:
 	if args.has("file"):
 		print("Loaded file: %s" % args["file"])
 		target = "./%s" % args["file"]
+	if args.has("color_palette"):
+		print("Loaded color palette: %s" % args["color_palette"])
+		var colors:String = FileAccess.open("./%s" % args["color_palette"], FileAccess.READ).get_as_text()
+		Global.setColorPalette(colors)
+	
 	
 	if !FileAccess.file_exists(target):
 		push_error("File %s doesn't exist!" % target)

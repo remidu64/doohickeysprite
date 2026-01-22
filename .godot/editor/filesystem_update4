@@ -1,3 +1,7 @@
 res://scenes/classes/Pixel.tscn
 res://src/autoload/interpreter.gd
 res://main.txt
+res://README.md
+res://color.txt
+res://src/main.gd
+res://src/autoload/global.gd

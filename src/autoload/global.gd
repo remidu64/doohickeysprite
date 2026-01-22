@@ -36,3 +36,14 @@ func DrawPixel(x:int, y:int, color:int):
 
 func ClearPixels():
 	main.ClearScreen()
+
+func setColorPalette(file:String):
+	var lines = file.split("\n")
+	
+	colors = []
+	
+	for line in lines:
+		if line != "":
+			print(line)
+			var color = Color.from_string(String(line), "282828ff")
+			colors.push_back(color)
