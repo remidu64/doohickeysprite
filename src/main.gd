@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var pixel_storage: Node2D = $PixelStorage
-
 var target:String = "./main.txt"
 
 func _ready() -> void:
@@ -35,11 +33,11 @@ func _exit_tree() -> void:
 	Global.main = null
 
 func ClearScreen():
-	for pixel in pixel_storage.get_children():
-		pixel.queue_free()
+	Global.image = Image.create_empty(64, 64, false, Image.FORMAT_RGBA8)
 
 # wait for a little bit so we dont have to wait until the program is done being evaluated
 func _on_evaluation_start_timeout() -> void:
+	Global.canvas.texture = ImageTexture.create_from_image(Global.image)
 	var file:String = FileAccess.open(target, FileAccess.READ).get_as_text()
 	
 	Evaluator.evaluate(file)

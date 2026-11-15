@@ -58,6 +58,8 @@ func interpret(line:Array):
 			Global.DrawPixel(x, y, color)
 		"CLEAR":
 			Global.ClearPixels()
+		"SHOW":
+			Global.ShowPixels()
 		# functions
 		"DEF":
 			var curFunctionDefinition = FunctionData.new()
@@ -96,6 +98,13 @@ func interpret(line:Array):
 			Evaluator.pc = int(line[1]) - 1
 		"WAIT":
 			Evaluator.temporary_wait_time = float(Evaluator.bytes[int(line[1])]) / 1000
+		"WINDOW":
+			var x: int = Evaluator.bytes[int(line[1])]
+			var y: int = Evaluator.bytes[int(line[2])]
+			if x > 64 and y > 64:
+				get_window().content_scale_size = Vector2i(x, y)
+			Global.image = Image.create_empty(x, y, false, Image.FORMAT_RGBA8)
+			Global.canvas.set_texture(ImageTexture.create_from_image(Global.image))
 		";": pass
 		_:
 			push_error("Invalid Token!")

@@ -7,6 +7,10 @@ script = ExtResource("1_elqb8")
 
 [node name="PixelStorage" type="Node2D" parent="." unique_id=1123157025]
 
+[node name="TextureRect" type="TextureRect" parent="PixelStorage" unique_id=658673160]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="EvaluationStart" type="Timer" parent="." unique_id=1281662596]
 wait_time = 0.1
 one_shot = true

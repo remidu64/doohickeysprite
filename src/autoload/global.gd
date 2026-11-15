@@ -1,5 +1,8 @@
 extends Node
 
+@onready var canvas: TextureRect = $"/root/Main/PixelStorage/TextureRect"
+@onready var pixel_storage: Node2D = $"/root/Main/PixelStorage"
+
 var main = null
 
 # just holding onto this shit until i add custom colors
@@ -25,9 +28,12 @@ var colors:Array[Color] = [
 	Color("ffffffff")
 ]
 
+var image = Image.create_empty(64, 64, false, Image.FORMAT_RGBA8)
 const PIXEL = preload("uid://dgnps7ogqslxl")
 
 func DrawPixel(x:int, y:int, color:int):
+	image.set_pixel(x-1, y-1, colors[color-1])
+	'''
 	var pixel = get_node("/root/Main/PixelStorage/[%s, %s]" % [x, y])
 	if pixel == null:
 		var curPixel = PIXEL.instantiate()
@@ -38,9 +44,13 @@ func DrawPixel(x:int, y:int, color:int):
 		main.pixel_storage.add_child(curPixel)
 	else:
 		pixel.update_pixel(colors[color - 1])
+	'''
 
 func ClearPixels():
 	main.ClearScreen()
+	
+func ShowPixels():
+	canvas.texture.update(image)
 
 func setColorPalette(file:String):
 	var lines = file.split("\n")

@@ -34,6 +34,10 @@ window/size/window_width_override=640
 window/size/window_height_override=640
 window/stretch/mode="viewport"
 
+[editor]
+
+run/main_run_args="size=10,10"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

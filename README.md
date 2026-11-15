@@ -44,6 +44,9 @@ ADD/SUB/DIV/MUL [BYTE1] [BYTE2] [TARGET]
 DRAW [BYTE1] [BYTE2] [COLOR]
  - draws a pixel on the coordinates specified by 2 bytes, with the color id from the game config (which can also be accessed using a byte and nothing else because i hate convenience)
 
+SHOW
+ - shows the drawn pixels
+
 CLEAR
  - clears the screen
 
@@ -67,5 +70,8 @@ NOT [BYTE] [EXPECTED BYTE] [LINE TO JUMP TO]
 
 WAIT [BYTE]
  - waits the value of a byte in milliseconds
+
+WINDOW [BYTE X] [BYTE Y]
+ - sets the canvas size to X by Y
 
 i'll make a proper documentation and readme file later, for now just ask me shit on discord
