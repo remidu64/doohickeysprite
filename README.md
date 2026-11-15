@@ -1,14 +1,18 @@
+# DISCLAIMER
+this is just a small continuation of [CyanActSus420's doohickeysprite](https://github.com/CyanActSus420/doohickeysprite)
+
+they told me doohickeysprite is a dead project, so dont bother them for bugfixes, new features, etc
+##
+
 ![cooltext500677313913238](https://github.com/user-attachments/assets/7c0b1a71-e2f5-4c23-9350-d6770dd2ca0c)
 
 a "simple" program that lets you make 64x64 pixel art and nothing else (not even save them)
 
 ## specification
 
-64x64 screen
+configurable screen size (64x64 by default)
 
-1024 bytes of memory
-
-(both are easily expandable if you want to go through the source code and change it)
+1024 bytes of memory (easily expandable if you want to go through the source code and change it)
 
 ## usage
 
@@ -75,3 +79,6 @@ WINDOW [BYTE X] [BYTE Y]
  - sets the canvas size to X by Y
 
 i'll make a proper documentation and readme file later, for now just ask me shit on discord
+
+## Special Thanks
+[CyanActSus420](https://github.com/CyanActSus420) for the original project
